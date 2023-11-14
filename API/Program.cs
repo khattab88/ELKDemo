@@ -2,6 +2,7 @@
 using Serilog;
 using Serilog.Exceptions;
 using Serilog.Sinks.Elasticsearch;
+using System.Reflection;
 
 namespace API
 {
@@ -66,7 +67,7 @@ namespace API
             return new ElasticsearchSinkOptions(new Uri(configuration["ELK:Uri"]))
             {
                 AutoRegisterTemplate = true,
-                IndexFormat = $"ELKDemo"
+                IndexFormat = $"ELKDemo-{Assembly.GetExecutingAssembly().GetName().Name.ToLower()}-{environment.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyy-MM}"
             };
         }
     }
