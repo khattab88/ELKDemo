@@ -4,7 +4,7 @@ Intro to ELK stack (ElasticSearch, Kibana) on .NET Web API.
 
 ## steps:
 1. setup ELK stack `docker-compose up`
-2. open ElasticSerach web access: http://localhost:9200
+2. open ElasticSearch web access: http://localhost:9200
 1. open Kibana web access: http://localhost:5601
 
 
